@@ -10,18 +10,11 @@ h1 {
 }
 
 #container {
-    width: 480px;
-    height: 480px;
     display: flex;
     flex-flow: row wrap;
     background-color: grey;
     border: 18px solid red;
     margin: 0 auto;
-}
-
-#container div {
-    width: 10px;
-    height: 10px;
 }
 
 button {
