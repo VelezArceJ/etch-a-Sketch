@@ -1,10 +1,12 @@
 const container = document.querySelector('#container');
 container.style.width = '480px';
 container.style.height = '480px';
-let width = parseInt(prompt("Original board width is 48. New width?"))
+let width = parseInt(prompt("Original board width is 48. New width?")) || 16;
 let squares = [];
-const button = document.querySelector('button');
+const button = document.querySelector('#shake');
 button.addEventListener('click', clearBoard);
+const reset = document.querySelector('#resize')
+reset.addEventListener('click', resizeBoard)
 
 function createBoard() {
     for (let i = 0; i < width*width; i++) {
@@ -26,12 +28,11 @@ function colorBoard(e) {
     e.style.backgroundColor = 'black';
 }
 
-function removeAllChildNodes(parent) {
-    while (parent.firstChild) {
-        parent.removeChild(parent.firstChild);
-    }
+function resizeBoard() {
+    window.location.reload();
 };
 
 function clearBoard() {
-    window.location.reload();
-};
+    console.log(squares[0]);
+    squares.forEach( square => square.style.backgroundColor = 'grey');
+}
